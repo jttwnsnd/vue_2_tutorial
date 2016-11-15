@@ -13,6 +13,8 @@
 
 	<div id="app">
 		<h1 v-bind:title="title">{{message}}</h1>
+		<!-- v-bind can be represented with just a : -->
+		<img :src="url" :alt="title" :title="title">
 	</div>
 
 </body>
@@ -27,7 +29,7 @@
 		data: {
 			message: 'hello world',
 			title: 'You loaded the page on ' + new Date(),
-			url: 'http://vuejs.org/images/logo.png'
+			url: 'https://vuejs.org/images/logo.png'
 		}
 	})
 </script>
