@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vue.JS Tutorial | Directives</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<!-- Directives work like attributes in HTML -->
+<!-- They are represented with the 'V-' prefix -->
+<!-- v-text says "add text to this element" -->
+<!-- v-html is similar to JS .innerHTML, reads html tags. v-text does not -->
+<!-- v-show reminds me of ng-show from Angular. It only shows elements where it's value is true. Toggles the css element display:none and display:inline -->
+<!-- v-if pulls the element in and out of the DOM. also works like an 'if' statement -->
+<!-- v-else works when an if statement isn't met. -->
+<!-- v-pre doesn't render through view, so it will print what is there. great for displaying code-snippets -->
+<!-- v-once says to render the element one time. -->
+<!-- v-cloak waits for the page to load for the elements to render -->
+	<div id="app">
+		<h1 v-cloak>{{message}}</h1>
+		<!-- <h1 v-else>You have not viewed this page</h1> -->
+
+	</div>
+
+</body>
+<!-- Normal version is recommended for development -->
+<script src="https://unpkg.com/vue@2.0.5/dist/vue.js"></script>
+
+<script>
+	var app = new Vue({
+		// element we want to bind Vue to.
+		el: '#app',
+		// model of Vue, data objects Vue is going to handle
+		data: {
+			message: 'Hello Vue World',
+			intro: 'Welcome to the Tutorial <small>It is all about Vue.js</small>',
+			viewed: true,
+			viewed2: false
+		}
+	})
+</script>
+</html>
