@@ -12,9 +12,18 @@
 <body>
 <!-- Directives work like attributes in HTML -->
 <!-- They are represented with the 'V-' prefix -->
+<!-- v-text says "add text to this element" -->
+<!-- v-html is similar to JS .innerHTML, reads html tags. v-text does not -->
+<!-- v-show reminds me of ng-show from Angular. It only shows elements where it's value is true. Toggles the css element display:none and display:inline -->
+<!-- v-if pulls the element in and out of the DOM. also works like an 'if' statement -->
+<!-- v-else works when an if statement isn't met. -->
+<!-- v-pre doesn't render through view, so it will print what is there. great for displaying code-snippets -->
+<!-- v-once says to render the element one time. -->
+<!-- v-cloak waits for the page to load for the elements to render -->
 	<div id="app">
-		<!-- data-binding, dbl brackets similar to angular 1.5.8 -->
-		<h1>{{message}}</h1>
+		<h1 v-cloak>{{message}}</h1>
+		<!-- <h1 v-else>You have not viewed this page</h1> -->
+
 	</div>
 
 </body>
@@ -27,7 +36,10 @@
 		el: '#app',
 		// model of Vue, data objects Vue is going to handle
 		data: {
-			message: 'Hello Vue World'
+			message: 'Hello Vue World',
+			intro: 'Welcome to the Tutorial <small>It is all about Vue.js</small>',
+			viewed: true,
+			viewed2: false
 		}
 	})
 </script>
